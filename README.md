@@ -12,6 +12,7 @@
     * mostly for documentation
 * Writing you first test in go
   * Syntax
+    * before that create and initialize your `go-module` [how to?](https://github.com/themayurkumbhar/go-fundamentals#go-modules-packages-and-source-files-basics-spiral_notepad)
   ```go
     package main_test
     import (
