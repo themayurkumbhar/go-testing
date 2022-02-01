@@ -14,7 +14,7 @@ func TestMultiplication(testingPointer *testing.T) {
 
 func TestAddition(t *testing.T) {
 	actual := 5 - 3
-	expected := 3
+	expected := 2
 	if actual != expected {
 		t.Errorf("Expected this '%v', but got this '%v'", expected, actual)
 	}
