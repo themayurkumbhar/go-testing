@@ -71,6 +71,24 @@
     * No longer access to all vars of package level.
   * Which one to use?
     * **BlackBox** is recommended!
-  * 
+  * Example:
+    * source file [messages.go](messages/messages.go) contains 2 methods to test.
+    * test file [messages_test.go](messages/messages_test.go) contains `whitebox tests` for above code.
+  * Reporting failures!
+    * immediate failures
+      * exit current task immdediatly
+    * non-immediate failure
+      * failure occured but test func will continue
+        * `t.FailNow()` - fail with empty msg
+        * `t.Fatal(args ...interface{})` - error msg and options
+        * `t.Fatal(format string, args ...interface{})` - formatted msg and options
+      * similarly checking multiple failures
+        * `t.Fail()`
+        * `t.Error(args ...interface{}})`
+        * `t.Error(format string, args ...interface{}})`
+    * running tests
+      * `go test` - run test in current folder/pckg
+      * `go test -v` - run test with verbose output
+      * `go test -run {regex}` - run test that matches the given `regex` expression
 
 ---
