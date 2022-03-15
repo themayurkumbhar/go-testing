@@ -12,7 +12,7 @@
     * mostly for documentation
 * Writing you first test in go
   * Syntax
-    * before that create and initialize your `go-module` [how to?](https://github.com/themayurkumbhar/go-fundamentals#go-modules-packages-and-source-files-basics-spiral_notepad)
+    * before that create and initialize your `go-module` - [how to?](https://github.com/themayurkumbhar/go-fundamentals#go-modules-packages-and-source-files-basics-spiral_notepad)
   ```go
     package main_test
     import (
@@ -20,12 +20,12 @@
     )
     func MethodToTest(testingPointer *testing.T) {
         // initialize
-        // do something
+        // Test something
         // assert the result
     }
   ```
   * Here the `*testing.T` in package `testing` provides all the required methods to testing in go
-    * in Go there is no such thing as assert, you have to manully analyze the result with `if` and raise any error
+    * in Go there is no such thing as assert, you have to manully analyze the result with `if` and `raise` any `error`
 * Once you write the basic test, lets run
     ```bash
     go test -v
@@ -57,5 +57,20 @@
     * Httpexpect : [gavv/httpexpect](https://github.com/gavv/httpexpect) end-to-end web testing
     * Gomock : [gomock](https://github.com/golang/mock) mock objects
     * go-sqlmock : [DATA-DOG/go-sqlmock](https://github.com/DATA-DOG/go-sqlmock)
+## 2. Understanding standard pracices for Go-Tests
+
+* Naming Convenstions:
+  * Add `_test` to filenames of each test file.
+  * Prefix all the test with `Test` word.
+    * Test which are not prefixed with `Test` will not be identified as tests.
+  * Accept One param `*testing.T` which gives access to Test Runner.
+  * Same package name `main` means you are writing test for same package
+    * which says its `Whitebox testing`
+    * Get access to all vars of package level.
+  * If you add `_test` to you package like `main_test` it makes to `BlackBox testing`
+    * No longer access to all vars of package level.
+  * Which one to use?
+    * **BlackBox** is recommended!
+  * 
 
 ---
