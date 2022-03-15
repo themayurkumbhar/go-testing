@@ -90,5 +90,29 @@
       * `go test` - run test in current folder/pckg
       * `go test -v` - run test with verbose output
       * `go test -run {regex}` - run test that matches the given `regex` expression
+  * Generate test coverage report
+    * execute `go test -cover` to get test coverage of your code
+    * example output
+    ```bash
+    PASS
+    coverage: 100.0% of statements
+    ok      github.com/themayurkumbhar/go-testing/messages  1.001s
+    ```
+    * get info for not covered by test
+      * execute `go test -coverprofile {taget/path/filename}`
+      * this will generate the file with coverage report with non covered lines.
+      * example: [coverage.out](messages/coverage.out)
+      * you need `go tool` to analyze this profile to understand the non covered line.
+      * execute `go tool cover -func coverage.go`
+      * output:
+      ```bash
+      github.com/themayurkumbhar/go-testing/messages/messages.go:8:   Greet     100.0%
+      github.com/themayurkumbhar/go-testing/messages/messages.go:13:  depart    100.0%
+      github.com/themayurkumbhar/go-testing/messages/messages.go:17:  nonCoveredMethod   0.0%
+      total:                                                          (statements)               66.7%
+      ```
+      * you can also get in `HTML` format using
+        * `go tool cover -html coverage.go`
+
 
 ---
