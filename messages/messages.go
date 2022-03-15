@@ -13,3 +13,7 @@ func Greet(name string) string {
 func depart(name string) string {
 	return fmt.Sprintf("Good bye %v.\n", name)
 }
+
+func nonCoveredMethod() {
+	fmt.Print("Hello!!")
+}
