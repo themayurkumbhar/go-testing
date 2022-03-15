@@ -113,6 +113,8 @@
       ```
       * you can also get in `HTML` format using
         * `go tool cover -html coverage.go`
-
+    * Tests with **Scenarios**
+      * you can write multiple scenarios and test in one go method.
+      * ref: [messages_test.go](messages/messages.go) `TestScenariosForGreet` Method.
 
 ---

@@ -21,3 +21,20 @@ func TestDepart(t *testing.T) {
 	}
 
 }
+
+func TestScenariosForGreet(t *testing.T) {
+	scenarios := []struct {
+		intput string
+		expect string
+	}{
+		{intput: "World", expect: "Hello, World!\n"},
+		{intput: "", expect: "Hello, !\n"},
+	}
+
+	for _, scenario := range scenarios {
+		got := Greet(scenario.intput)
+		if got != scenario.expect {
+			t.Errorf("Expected %q but got %q", scenario.expect, got)
+		}
+	}
+}
